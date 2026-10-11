@@ -919,11 +919,10 @@
       "name": "YAML keys",
       "scope": [
         "entity.name.tag.yaml",
-        "meta.mapping.key.yaml",
-        "string.unquoted.plain.out.yaml"
+        "meta.map.key.yaml"
       ],
       "settings": {
-        "foreground": "#4ddcf0"
+        "foreground": "#8fcbe8"
       }
     },
     {
