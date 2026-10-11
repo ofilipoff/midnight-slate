@@ -1,0 +1,34 @@
+{
+  "name": "midnight-slate",
+  "displayName": "Midnight Slate",
+  "description": "A dark theme for Visual Studio Code with a charcoal interface, muted accents, and semantic syntax highlighting.",
+  "version": "1.0.0",
+  "publisher": "YOUR_PUBLISHER_ID",
+  "icon": "images/icon-rounded.png",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": ["Themes"],
+  "keywords": [
+    "dark",
+    "theme",
+    "color theme",
+    "semantic highlighting",
+    "csharp",
+    "razor"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Midnight Slate",
+        "uiTheme": "vs-dark",
+        "path": "./themes/midnight-slate-color-theme.json"
+      }
+    ]
+  },
+  "galleryBanner": {
+    "color": "#282c34",
+    "theme": "dark"
+  }
+}
