@@ -25,3 +25,12 @@ jobs:
           az account show \
             --query "{tenant:tenantId, identity:user.name, type:user.type}" \
             --output json
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Verify Marketplace publisher access
+        run: |
+          npx --yes @vscode/vsce verify-pat ofilipoff --azure-credential
