@@ -1,0 +1,179 @@
+
+name: Release
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: midnight-slate-release
+  cancel-in-progress: false
+
+env:
+  GH_REPO: ${{ github.repository }}
+
+jobs:
+  prepare:
+    name: Prepare release
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    outputs:
+      tag: ${{ steps.metadata.outputs.tag }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate release metadata
+        id: metadata
+        shell: bash
+        env:
+          EXPECTED_PUBLISHER: ${{ vars.VSCE_PUBLISHER }}
+          VERSION_REGEX: ${{ vars.VSCE_VERSION_REGEX }}
+        run: |
+          set -euo pipefail
+
+          if [[ -z "$EXPECTED_PUBLISHER" || -z "$VERSION_REGEX" ]]; then
+            echo "Required repository variables are missing"
+            exit 1
+          fi
+
+          VERSION=$(node -p "require('./package.json').version")
+          PUBLISHER=$(node -p "require('./package.json').publisher")
+
+          if [[ "$PUBLISHER" != "$EXPECTED_PUBLISHER" ]]; then
+            echo "Unexpected publisher: $PUBLISHER"
+            exit 1
+          fi
+
+          if [[ ! "$VERSION" =~ $VERSION_REGEX ]]; then
+            echo "Invalid release version: $VERSION"
+            exit 1
+          fi
+
+          echo "tag=v${VERSION}" >> "$GITHUB_OUTPUT"
+
+      - name: Package extension
+        run: |
+          npx --no-install vsce package \
+            --out midnight-slate.vsix
+
+      - name: Upload workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: midnight-slate-vsix
+          path: midnight-slate.vsix
+          if-no-files-found: error
+          overwrite: true
+
+      - name: Create tag and draft release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ steps.metadata.outputs.tag }}
+        run: |
+          set -euo pipefail
+
+          VERSION="${TAG#v}"
+
+          TAG_SHA=$(git ls-remote origin "refs/tags/${TAG}" | cut -f1)
+
+          if [[ -z "$TAG_SHA" ]]; then
+            gh api \
+              --method POST \
+              "repos/${GITHUB_REPOSITORY}/git/refs" \
+              -f "ref=refs/tags/${TAG}" \
+              -f "sha=${GITHUB_SHA}"
+          elif [[ "$TAG_SHA" != "$GITHUB_SHA" ]]; then
+            echo "Tag $TAG belongs to a different commit"
+            exit 1
+          fi
+
+          if gh release view "$TAG" --json isDraft \
+              --jq '.isDraft' > draft-status.txt 2>/dev/null; then
+
+            if [[ "$(cat draft-status.txt)" != "true" ]]; then
+              echo "Release $TAG is already published"
+              exit 1
+            fi
+          else
+            gh release create "$TAG" \
+              --verify-tag \
+              --title "Midnight Slate $VERSION" \
+              --generate-notes \
+              --draft
+          fi
+
+          gh release upload "$TAG" midnight-slate.vsix --clobber
+
+  deploy:
+    name: Publish to Marketplace
+    needs: prepare
+    runs-on: ubuntu-latest
+    environment: marketplace
+
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download release artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: midnight-slate-vsix
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Sign in to Microsoft Entra
+        uses: azure/login@v3
+        with:
+          client-id: ${{ vars.ENTRA_CLIENT_ID }}
+          tenant-id: ${{ vars.ENTRA_TENANT_ID }}
+          allow-no-subscriptions: true
+
+      - name: Publish to Visual Studio Marketplace
+        run: |
+          npx --no-install vsce publish \
+            --azure-credential \
+            --packagePath midnight-slate.vsix
+
+  finalize:
+    name: Publish GitHub release
+    needs: [prepare, deploy]
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ needs.prepare.outputs.tag }}
+        run: |
+          gh release edit "$TAG" --draft=false

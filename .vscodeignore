@@ -5,3 +5,7 @@
 .vscodeignore
 *.vsix
 node_modules/**
+# Marketplace rejects SVG images in the package
+images/**/*.svg
+# Exclude the icons that are not used
+images/icon.png
