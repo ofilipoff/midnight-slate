@@ -2,7 +2,7 @@
   "name": "midnight-slate",
   "displayName": "Midnight Slate",
   "description": "A dark theme for Visual Studio Code with a charcoal interface, muted accents, and semantic syntax highlighting.",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "publisher": "ofilipoff",
   "icon": "images/icons/icon-rounded.png",
   "license": "MIT",

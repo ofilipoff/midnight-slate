@@ -1,8 +1,8 @@
 # Midnight Slate
 
-A dark theme for Visual Studio Code, primarily designed for C# and .NET development.
+A dark theme for Visual Studio Code, primarily designed for C#/.NET and Swift/SwiftUI development.
 
-Midnight Slate combines a charcoal interface with muted accents and distinct syntax colors. It includes editor, terminal, Source Control, and workbench colors, with additional attention to JSON, YAML, Bicep, Razor, and other languages commonly used in .NET development. Other languages use the same color palette, but have not been tested extensively.
+Midnight Slate combines a charcoal interface with muted accents and distinct syntax colors. It includes editor, terminal, Source Control, and workbench colors, with additional attention to JSON, YAML, and Bicep. Other languages, such as Razor, TypeScript, and JavaScript, use the same color palette, but have not been tested extensively.
 
 ## Preview
 
@@ -13,6 +13,12 @@ Midnight Slate combines a charcoal interface with muted accents and distinct syn
 ![C# interface highlighting](images/screenshots/csharp-interface-syntax.png)
 
 ![ASP.NET Core controller highlighting](images/screenshots/csharp-controller-syntax.png)
+
+### Swift
+
+![Swift highlighting](images/screenshots/swift-syntax.png)
+
+![SwiftUI highlighting](images/screenshots/swift-ui-syntax.png)
 
 ### Source Control
 
@@ -122,17 +128,20 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git \
   ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 ```
 
-### Related extensions
+### Related extensions and tools
 
-These extensions complement Midnight Slate for C# and .NET development:
+These extensions and tools complement Midnight Slate for C#/.NET and Swift development:
 
 - [Material Icon Theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme) — file and folder icons.
 - [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit) — C# and .NET development support.
 - [Bicep](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-bicep) — Azure infrastructure authoring.
 - [YAML](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml) — YAML language support.
+- [Swift](https://marketplace.visualstudio.com/items?itemName=swiftlang.swift-vscode) — Swift language support.
+- [SweetPad](https://marketplace.visualstudio.com/items?itemName=sweetpad.sweetpad) — build, run, and debug iOS and macOS apps from VS Code.
+- [SweetPad CLI](https://sweetpad.hyzyla.dev/docs/cli/getting-started) — build, run, and test Xcode apps from the terminal.
 - [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) — enhanced Git history and annotations.
 
-These extensions are optional and aren't dependencies of Midnight Slate.
+These extensions/tools are optional and aren't dependencies of Midnight Slate.
 
 ## License
 
