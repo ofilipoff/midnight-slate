@@ -222,27 +222,29 @@
     "list.warningForeground": "#f0c674",
     "list.errorForeground": "#cc6666",
     "ports.iconRunningProcessForeground": "#b5bd68",
-    "gitDecoration.modifiedResourceForeground": "#f0c674",
-    "gitDecoration.addedResourceForeground": "#b5bd68",
-    "gitDecoration.deletedResourceForeground": "#cc6666",
+    "gitDecoration.modifiedResourceForeground": "#DEB47A",
+    "gitDecoration.addedResourceForeground": "#9BC58A",
+    "gitDecoration.deletedResourceForeground": "#D47A78",
     "gitDecoration.untrackedResourceForeground": "#8abeb7",
     "gitDecoration.conflictingResourceForeground": "#d54e53",
     "gitDecoration.ignoredResourceForeground": "#666b73",
     "gitDecoration.renamedResourceForeground": "#81a2be",
-    "gitDecoration.stageModifiedResourceForeground": "#f0c674",
-    "gitDecoration.stageDeletedResourceForeground": "#cc6666",
+    "gitDecoration.stageModifiedResourceForeground": "#DEB47A",
+    "gitDecoration.stageDeletedResourceForeground": "#D47A78",
     "gitDecoration.submoduleResourceForeground": "#8b929c",
-    "diffEditor.insertedTextBackground": "#b5bd6825",
-    "diffEditor.removedTextBackground": "#cc666625",
-    "diffEditor.insertedLineBackground": "#b5bd6810",
-    "diffEditor.removedLineBackground": "#cc666610",
+    "diffEditor.insertedTextBackground": "#9BC58A35",
+    "diffEditor.removedTextBackground": "#D47A7835",
+    "diffEditor.insertedLineBackground": "#9BC58A18",
+    "diffEditor.removedLineBackground": "#D47A7818",
     "diffEditor.border": "#242830",
+    "inlineChatDiff.inserted": "#9BC58A35",
+    "inlineChatDiff.removed": "#D47A7835",
     "chat.editedFileForeground": "#8abeb7",
-    "chat.linesAddedForeground": "#b5bd68cc",
-    "chat.linesRemovedForeground": "#cc6666cc",
-    "editorOverviewRuler.inlineChatInserted": "#b5bd68",
-    "editorOverviewRuler.inlineChatRemoved": "#cc6666",
-    "editorMinimap.inlineChatInserted": "#b5bd68",
+    "chat.linesAddedForeground": "#9BC58ACC",
+    "chat.linesRemovedForeground": "#D47A78CC",
+    "editorOverviewRuler.inlineChatInserted": "#9BC58A",
+    "editorOverviewRuler.inlineChatRemoved": "#D47A78",
+    "editorMinimap.inlineChatInserted": "#9BC58A",
     "minimap.chatEditHighlight": "#8abeb7",
     "chat.requestBackground": "#303640",
     "chat.requestBorder": "#414854",
@@ -259,15 +261,15 @@
     "editorGhostText.background": "#00000000",
     "editorGhostText.border": "#00000000",
     "inlineEdit.originalBackground": "#00000000",
-    "inlineEdit.originalBorder": "#cc666680",
-    "inlineEdit.originalChangedLineBackground": "#cc666610",
-    "inlineEdit.originalChangedTextBackground": "#cc666625",
+    "inlineEdit.originalBorder": "#D47A7880",
+    "inlineEdit.originalChangedLineBackground": "#D47A7818",
+    "inlineEdit.originalChangedTextBackground": "#D47A7835",
     "inlineEdit.modifiedBackground": "#00000000",
-    "inlineEdit.modifiedBorder": "#b5bd6880",
-    "inlineEdit.modifiedChangedLineBackground": "#b5bd6810",
-    "inlineEdit.modifiedChangedTextBackground": "#b5bd6825",
-    "inlineEdit.tabWillAcceptModifiedBorder": "#b5bd6880",
-    "inlineEdit.tabWillAcceptOriginalBorder": "#cc666680",
+    "inlineEdit.modifiedBorder": "#9BC58A80",
+    "inlineEdit.modifiedChangedLineBackground": "#9BC58A18",
+    "inlineEdit.modifiedChangedTextBackground": "#9BC58A35",
+    "inlineEdit.tabWillAcceptModifiedBorder": "#9BC58A80",
+    "inlineEdit.tabWillAcceptOriginalBorder": "#D47A7880",
     "inlineEdit.gutterIndicator.background": "#242830",
     "inlineEdit.gutterIndicator.primaryBackground": "#8abeb7",
     "inlineEdit.gutterIndicator.primaryForeground": "#1e2127",
@@ -275,9 +277,9 @@
     "inlineEdit.gutterIndicator.secondaryBackground": "#353943",
     "inlineEdit.gutterIndicator.secondaryForeground": "#c5c8c6",
     "inlineEdit.gutterIndicator.secondaryBorder": "#414854",
-    "inlineEdit.gutterIndicator.successfulBackground": "#b5bd68",
+    "inlineEdit.gutterIndicator.successfulBackground": "#9BC58A",
     "inlineEdit.gutterIndicator.successfulForeground": "#1e2127",
-    "inlineEdit.gutterIndicator.successfulBorder": "#b5bd68",
+    "inlineEdit.gutterIndicator.successfulBorder": "#9BC58A",
     "editor.findMatchBackground": "#f0c67455",
     "editor.findMatchBorder": "#f0c674",
     "editor.findMatchHighlightBackground": "#f0c67425",
@@ -301,6 +303,21 @@
     "editorStickyScrollGutter.background": "#1e2127",
     "editorStickyScroll.border": "#242830",
     "editorStickyScrollHover.background": "#282c34",
+    "debugIcon.breakpointForeground": "#D54E53",
+    "debugIcon.breakpointDisabledForeground": "#8B929C",
+    "debugIcon.breakpointUnverifiedForeground": "#8B929C",
+    "editorOverviewRuler.errorForeground": "#D54E53",
+    "editorOverviewRuler.warningForeground": "#F0C674",
+    "editorOverviewRuler.infoForeground": "#81A2BE",
+    "editorGutter.addedBackground": "#9BC58A",
+    "editorGutter.modifiedBackground": "#DEB47A",
+    "editorGutter.deletedBackground": "#D47A78",
+    "editorOverviewRuler.addedForeground": "#9BC58A",
+    "editorOverviewRuler.modifiedForeground": "#DEB47A",
+    "editorOverviewRuler.deletedForeground": "#D47A78",
+    "minimapGutter.addedBackground": "#9BC58A",
+    "minimapGutter.modifiedBackground": "#DEB47A",
+    "minimapGutter.deletedBackground": "#D47A78",
     "peekView.border": "#414854",
     "peekViewEditor.background": "#1e2127",
     "peekViewEditorGutter.background": "#1e2127",
@@ -395,14 +412,15 @@
         "keyword.other",
         "keyword.declaration",
         "keyword.operator.word",
-        "support.constant.language"
+        "support.constant.language",
+        "keyword.control.import"
       ],
       "settings": {
         "foreground": "#569CD6"
       }
     },
     {
-      "name": "C# and VB control flow",
+      "name": "Control flow",
       "scope": [
         "keyword.control",
         "keyword.control.cs",
@@ -476,7 +494,8 @@
         "support.namespace",
         "meta.namespace",
         "meta.import variable.other",
-        "entity.name.package"
+        "entity.name.package",
+        "meta.import entity.name.type"
       ],
       "settings": {
         "foreground": "#91b7ca"
@@ -489,14 +508,10 @@
         "entity.name.class",
         "support.type",
         "support.class",
-        "storage.type.class",
-        "storage.type.struct",
-        "storage.type.interface",
         "entity.name.type.class",
         "entity.name.type.alias",
         "entity.name.type.module",
-        "entity.name.type.record",
-        "entity.name.type.enum"
+        "entity.name.type.record"
       ],
       "settings": {
         "foreground": "#60cdb8"
@@ -505,6 +520,13 @@
     {
       "name": "Interfaces",
       "scope": ["entity.name.type.interface", "entity.name.interface"],
+      "settings": {
+        "foreground": "#B8D7A3"
+      }
+    },
+    {
+      "name": "Protocols",
+      "scope": "entity.name.type.protocol",
       "settings": {
         "foreground": "#B8D7A3"
       }
@@ -553,7 +575,14 @@
         "variable.other.event"
       ],
       "settings": {
-        "foreground": "#C5B2DB"
+        "foreground": "#C2AEDC"
+      }
+    },
+    {
+      "name": "Attributes",
+      "scope": "storage.modifier.attribute",
+      "settings": {
+        "foreground": "#C2AEDC"
       }
     },
     {
@@ -1044,21 +1073,21 @@
       "name": "Diff added",
       "scope": ["markup.inserted", "markup.inserted.diff"],
       "settings": {
-        "foreground": "#b5bd68"
+        "foreground": "#9BC58A"
       }
     },
     {
       "name": "Diff removed",
       "scope": ["markup.deleted", "markup.deleted.diff"],
       "settings": {
-        "foreground": "#cc6666"
+        "foreground": "#D47A78"
       }
     },
     {
       "name": "Diff changed",
       "scope": ["markup.changed", "markup.changed.diff"],
       "settings": {
-        "foreground": "#f0c674"
+        "foreground": "#DEB47A"
       }
     },
     {
@@ -1090,7 +1119,7 @@
     "typeParameter": "#B8D7A3",
     "enum": "#90e7b7",
     "enumMember": "#B8D7A3",
-    "delegate": "#C5B2DB",
+    "delegate": "#C2AEDC",
     "array": "#60cdb8",
     "pointer": "#60cdb8",
     "functionPointer": "#60cdb8",
@@ -1102,7 +1131,7 @@
     "property.static": "#90e7b7",
     "property.readonly": "#e2f5ff",
     "constant": "#a6e7c3",
-    "event": "#C5B2DB",
+    "event": "#C2AEDC",
     "function": "#e7d49c",
     "method": "#e7d49c",
     "extensionMethod": "#e7d49c",
@@ -1115,6 +1144,7 @@
     "punctuation": "#c5c8c6",
     "label": "#d8e9f3",
     "macro": "#79698e",
+    "macro:swift": "#C2AEDC",
     "preprocessorText": "#a392b7",
     "string": "#e7a889",
     "stringVerbatim": "#e7a889",

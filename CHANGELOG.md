@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0] - 2026-10-17
+
+- Added Swift and SwiftUI highlighting.
+- Refined the Source Control and diff colors for better readability.
+- Added colors for gutter change indicators, breakpoints, and the overview ruler.
+- Added Swift and SwiftUI screenshots and updated the Git diff screenshot.
+
 ## [0.1.1] - 2026-10-17
 
 - Added screenshots and a recommended setup guide (icons, font, terminal) to the README.
