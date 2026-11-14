@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.0] - 2026-11-14
+
+- Added Angular, NestJS, and TypeScript highlighting.
+- Added dedicated HTML, CSS, JSON, and YAML token rules and refined import, parameter, and property colors.
+- Added colors for debugging, list focus, status bar, sticky scroll, indent guides, and bracket highlighting.
+- Increased the contrast of diff and inline edit highlights.
+- Added Angular and NestJS screenshots and updated the C#, Swift, Git diff, and JSON/Bicep screenshots.
+
 ## [0.2.0] - 2026-10-17
 
 - Added Swift and SwiftUI highlighting.
