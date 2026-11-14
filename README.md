@@ -1,8 +1,8 @@
 # Midnight Slate
 
-A dark theme for Visual Studio Code, primarily designed for C#/.NET and Swift/SwiftUI development.
+A dark theme for Visual Studio Code, primarily designed for C#/.NET, Swift/SwiftUI, and Angular/NestJS development.
 
-Midnight Slate combines a charcoal interface with muted accents and distinct syntax colors. It includes editor, terminal, Source Control, and workbench colors, with additional attention to JSON, YAML, and Bicep. Other languages, such as Razor, TypeScript, and JavaScript, use the same color palette, but have not been tested extensively.
+Midnight Slate combines a charcoal interface with muted accents and distinct syntax colors. It includes editor, terminal, Source Control, and workbench colors, with additional attention to TypeScript, HTML, CSS, JSON, YAML, and Bicep. Other languages, such as Razor and JavaScript, use the same color palette, but have not been tested extensively.
 
 ## Preview
 
@@ -20,13 +20,21 @@ Midnight Slate combines a charcoal interface with muted accents and distinct syn
 
 ![SwiftUI highlighting](images/screenshots/swift-ui-syntax.png)
 
+### Angular and NestJS
+
+![Angular TypeScript highlighting](images/screenshots/angular-typescript-syntax.png)
+
+![Angular HTML and CSS highlighting](images/screenshots/angular-html-and-css-syntax.png)
+
+![NestJS TypeScript highlighting](images/screenshots/nest-typescript-syntax.png)
+
 ### Source Control
 
 ![Git diff highlighting](images/screenshots/git-diffs.png)
 
 ### JSON and Bicep
 
-![JSON and Bicep highlighting](images/screenshots/json-bicep-syntax.png)
+![JSON and Bicep highlighting](images/screenshots/json-and-bicep-syntax.png)
 
 ## Installation
 
